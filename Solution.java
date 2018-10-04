@@ -19,9 +19,9 @@ public class Paires
 			int sum=0;
 			for(int i1=0;i1<=d;i1++)
 				if(a[i]==b[i1])
-					sum++;
-			if(sum<2)
-			{
+					sum++;*/
+			//if(sum<2)
+			//{
 				if(c%2==0)
 					System.out.println(a[i]+"="+c/2+" pairs");
 				else
