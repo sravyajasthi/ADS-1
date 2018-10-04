@@ -3,9 +3,8 @@ public class Paires
 	public static void main(String[]args)
 	{
 		int a[]=new int[20];
-		int b[]=new int[20];
+		//int b[]=new int[20];
 		Scanner scan=new Scanner(System.in);
-		//for(int i=0;i<10;i++)
 		for(int i=0;i<10;i++)
 			a[i]=scan.nextInt();
 		int a1=0,c=0,d=0;
@@ -15,7 +14,7 @@ public class Paires
 			for(int j=0;j<10;j++)
 				if(a[i]==a[j]&&i!=j)
 					c++;
-			b[d]=a[i];
+			/*b[d]=a[i];
 			d++;
 			int sum=0;
 			for(int i1=0;i1<=d;i1++)
@@ -27,7 +26,7 @@ public class Paires
 					System.out.println(a[i]+"="+c/2+" pairs");
 				else
 					System.out.println(a[i]+"="+(c-1)/2+"pairs");
-			}
+			//}
 				
 			
 		}
