@@ -38,23 +38,50 @@ class AddLargeNumbers {
     }
 
     public static LinkedList addLargeNumbers(LinkedList list1, LinkedList list2) {
-    	Stack st=new Stack();
-    	int n=list1.size();
-    	for(int i=0;i<n;i++)
+    	Stack st1=new Stack();
+    	Stack st2=new Stack();
+    	Stack temp=new Stack();
+    	//System.out.println(list1.size());
+    	//System.out.println(list2.size());
+    	LinkedList ln=new LinkedList();
+    	for(int i=0;i<list1.size();i++)
     	{
-    		
-    		String x= (String) list1.get(i);
-    		st.add(x);
+    		st1.push(list1.get(i));
+    		st2.push(list2.get(i));
     	}
-    	System.out.println(st.addAll(st));
-    	int m=st.size();
-    	for(int i=0;i<m;i++)
-    		list2.add(st.pop());
-		return list2;
-
-    }
+    	int c;
+    	for(int i=0;i<list1.size();i++)
+    	{ 
+    		//System.out.println("hi");
+    		//System.out.println(list1.get(i));
+    		int a=Character.getNumericValue((char) st1.pop());
+    		int b=Character.getNumericValue((char) st2.pop());
+    		if(temp.isEmpty())
+    			c= a+b;
+    		else 
+    		{
+    			int d=(int) temp.pop();
+    			c=a+b+d;
+    		}
+    		if(c>9)
+    		{
+    			ln.add(c%10);
+    			temp.push(c/10);
+    		}
+    		else 
+    			ln.add(c);
+    		
+    		
+    		
+    		
+    		
+    				
+    		
+    	}
+    	
+    	return ln;
 }
-
+}
 public class Solution {
     public static void main(String[] args) {
     	//System.out.println("hi");
@@ -78,11 +105,15 @@ public class Solution {
                 break;
 
             case "addLargeNumbers":
-               
+              // System.out.println("hi");
+               pDigits = AddLargeNumbers.numberToDigits(p);
+               qDigits = AddLargeNumbers.numberToDigits(q);
                 LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits, qDigits);
+                //System.out.println("hi");
                 System.out.println(AddLargeNumbers.digitsToNumber(result));
                 break;
         }
     }
     
+
 }
