@@ -6,21 +6,30 @@ class AddLargeNumbers {
     
     public static LinkedList numberToDigits(String number) {
     	LinkedList node=new LinkedList();
-    	for(int i=0;number!="\0";i++)
+    	
+    	for(int i=0;i<number.length();i++)
     	{
-    		node.add(number.valueOf(i));
+    		//System.out.println(number);
+    		//System.out.println("4");
+    		node.add(number.charAt(i));
+    		//System.out.println(number.charAt(i));
     	}
+    	//System.out.println(node);
     		
 		return node;
 
     }
 
     public static String digitsToNumber(LinkedList list) {
-    	String s=null;   
-    	int n=list.size();
-    	for(int i=0;i<=n;i++)
+    	String s="";   
+    	
+    	
+    	//System.out.println(list);
+    	for(int i=0;i<list.size();i++)
     	{
-    		s=(String) list.get(i);
+    	
+    		//System.out.println(list.get(i));
+    		s=s+list.get(i);
     	}
     	
     	
@@ -48,23 +57,23 @@ class AddLargeNumbers {
 
 public class Solution {
     public static void main(String[] args) {
-    	System.out.println("hi");
+    	//System.out.println("hi");
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         String p = sc.nextLine();
         String q = sc.nextLine();
-        System.out.println("hi1");
+        //System.out.println("hi1");
         LinkedList pDigits=null ;
-        System.out.println("hi3");
+        //System.out.println("hi3");
         LinkedList qDigits=null ;
         switch(input){
             case "numberToDigits":
-               System.out.println("Hi");
+               //System.out.println("Hi");
                 pDigits = AddLargeNumbers.numberToDigits(p);
                 qDigits = AddLargeNumbers.numberToDigits(q);
 
                 System.out.println(AddLargeNumbers.digitsToNumber(pDigits));
-                System.out.println("hiiasdf");
+                //System.out.println("hiiasdf");
                 System.out.println(AddLargeNumbers.digitsToNumber(qDigits));
                 break;
 
