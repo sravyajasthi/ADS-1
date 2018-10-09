@@ -41,9 +41,9 @@ class AddLargeNumbers {
     	Stack st1=new Stack();
     	Stack st2=new Stack();
     	Stack temp=new Stack();
-    	//System.out.println(list1.size());
-    	//System.out.println(list2.size());
+    	
     	LinkedList ln=new LinkedList();
+    	LinkedList lf=new LinkedList();
     	for(int i=0;i<list1.size();i++)
     	{
     		st1.push(list1.get(i));
@@ -52,33 +52,38 @@ class AddLargeNumbers {
     	int c;
     	for(int i=0;i<list1.size();i++)
     	{ 
-    		//System.out.println("hi");
-    		//System.out.println(list1.get(i));
+    		
     		int a=Character.getNumericValue((char) st1.pop());
     		int b=Character.getNumericValue((char) st2.pop());
     		if(temp.isEmpty())
+    		{
     			c= a+b;
+    		
+    		}
     		else 
     		{
     			int d=(int) temp.pop();
     			c=a+b+d;
+    			
     		}
     		if(c>9)
     		{
-    			ln.add(c%10);
+    			ln.push(c%10);
     			temp.push(c/10);
+    			
     		}
     		else 
-    			ln.add(c);
-    		
-    		
-    		
-    		
-    		
-    				
+    			
+    			ln.push(c);
+    		}
+    	if(temp.isEmpty())
+    	{
     		
     	}
+    	else
+    		ln.push(temp.pop());
     	
+		
     	return ln;
 }
 }
