@@ -21,7 +21,7 @@ public class Solution {
 				{
 					if(j==s-1)
 					{
-						System.out.print(l1.pop());
+						System.out.print(l1.pop()+" ");
 						
 					}
 					else
@@ -34,6 +34,7 @@ public class Solution {
 		}
 		
 	}
+		System.out.println();
 	}
 
 	public static void main(String[] args) {
