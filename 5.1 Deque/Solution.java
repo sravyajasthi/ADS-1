@@ -12,7 +12,6 @@ public class Solution {
 	}
 	void pushRight(int n)
 	{
-		//System.out.println(r);
 		l1.add(r, n);
 		r++;
 		display();
